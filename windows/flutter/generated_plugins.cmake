@@ -3,6 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  linktsp_api
 )
 
 set(PLUGIN_BUNDLED_LIBRARIES)

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
 import 'core/localization/custom_translations.dart';
 import 'core/localization/language_enum.dart';
 import 'core/localization/lnaguages_enum.dart';
