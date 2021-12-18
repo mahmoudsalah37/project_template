@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
-import 'package:project_template/main.dart';
+import '../../main.dart';
 
 class Routes {
   const Routes();

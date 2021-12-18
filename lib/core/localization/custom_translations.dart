@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:project_template/core/localization/lnaguages_enum.dart';
 
 import 'language_json.dart';
+import 'lnaguages_enum.dart';
 
 class CustomTranslations extends Translations {
   @override

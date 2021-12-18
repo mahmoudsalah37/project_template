@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:project_template/core/localization/language_enum.dart';
-import 'core/utils/enums.dart';
 
 import 'core/localization/custom_translations.dart';
-import 'core/utils/routes.dart';
-import 'core/src/theme.dart';
+import 'core/localization/language_enum.dart';
+import 'core/localization/lnaguages_enum.dart';
+import 'core/src/themes/theme.dart';
 import 'core/utils/initial_binding.dart';
 import 'core/utils/injection_container.dart';
+import 'core/utils/routes.dart';
 
 void main() async {
   await _init();
@@ -28,8 +28,9 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       builder: () => GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: CustomsThemes.instance.defaultThemeData,
+        theme: CustomsThemes.defaultThemeData,
         translations: CustomTranslations(),
+        locale: Locale(Languages.en.name),
         fallbackLocale: Locale(Languages.en.name),
         initialBinding: InitialBinding(),
         getPages: Routes.instance.getScreens(),
@@ -49,7 +50,10 @@ class FirstPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(Language.appName.tr),
+          Text(
+            Language.appName.tr,
+            style: TextStyle(color: Theme.of(context).primaryColor),
+          ),
           Align(
             child: TextButton.icon(
               onPressed: () {
@@ -67,7 +71,25 @@ class FirstPage extends StatelessWidget {
               icon: const Icon(Icons.language),
               label: const Text('Change to EN'),
             ),
-          )
+          ),
+          Align(
+            child: TextButton.icon(
+              onPressed: () {
+                Get.changeTheme(CustomsThemes.darkThemeData);
+              },
+              icon: const Icon(Icons.language),
+              label: const Text('Dark Mode'),
+            ),
+          ),
+          Align(
+            child: TextButton.icon(
+              onPressed: () {
+                Get.changeTheme(CustomsThemes.lightThemeData);
+              },
+              icon: const Icon(Icons.language),
+              label: const Text('Light Mode'),
+            ),
+          ),
         ],
       ),
     );

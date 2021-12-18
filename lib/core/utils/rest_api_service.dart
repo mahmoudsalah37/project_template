@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+
 import 'custom_exception.dart';
 
 class RestApiImp implements RestApi {
