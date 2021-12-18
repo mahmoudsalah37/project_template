@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:project_template/core/utils/custom_exception.dart';
+import 'custom_exception.dart';
 
 class RestApiImp implements RestApi {
   String _domin = '', _token = '';
