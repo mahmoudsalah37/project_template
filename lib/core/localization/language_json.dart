@@ -1,10 +1,7 @@
-import 'language_enum.dart';
+import 'package:project_template/core/localization/languages/ar.dart';
+import 'package:project_template/core/localization/languages/en.dart';
 
 class LanguageJson {
-  static Map<String, String> get en => {
-        Language.appName.name: "App Name",
-      };
-  static Map<String, String> get ar => {
-        Language.appName.name: "أسم التطبيق",
-      };
+  static Map<String, String> get en => getEnglishTranslation();
+  static Map<String, String> get ar => getArabicTranslation();
 }
