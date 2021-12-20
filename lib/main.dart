@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:project_template/core/localization/get_language_from_cache.dart';
 import 'core/localization/custom_translations.dart';
 import 'core/localization/language_enum.dart';
@@ -37,14 +35,8 @@ class MyApp extends StatelessWidget {
         ],
         theme: CustomsThemes.defaultThemeData,
         translations: CustomTranslations(),
-        locale: Locale(GetStorage().read("lang") ?? Languages.en.name),
+        locale: Locale(Languages.en.name),
         fallbackLocale: Locale(Languages.en.name),
-        localizationsDelegates: const [
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-          DefaultCupertinoLocalizations.delegate,
-        ],
         initialBinding: InitialBinding(),
         getPages: Routes.instance.getScreens(),
       ),
@@ -71,7 +63,6 @@ class FirstPage extends StatelessWidget {
               child: TextButton.icon(
                 onPressed: () {
                   Get.updateLocale(Locale(Languages.ar.name));
-                  AppLanguage().changeLanguage('ar');
                 },
                 icon: const Icon(Icons.language),
                 label: const Text('Change to Ar'),
@@ -81,7 +72,6 @@ class FirstPage extends StatelessWidget {
               child: TextButton.icon(
                 onPressed: () {
                   Get.updateLocale(Locale(Languages.en.name));
-                  AppLanguage().changeLanguage(Languages.en.name);
                 },
                 icon: const Icon(Icons.language),
                 label: const Text('Change to EN'),
